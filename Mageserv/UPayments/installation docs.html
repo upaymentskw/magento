@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UPayments - Magento</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .step {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+        }
+
+        .animated {
+            animation-fill-mode: both;
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        .fadeOut {
+            animation-name: fadeOut;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+    <h1 class="animated fadeIn">UPayments - Magento</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="step animated fadeIn">
+                <h2>Installation</h2>
+                <h3>Install using FTP method</h3>
+                <p><em>Note: Delete any previous UPayments plugin.</em></p>
+                <ol>
+                    <li>Download the latest release of the plugin</li>
+                    <li>Upload the content of the folder to magento2 installation directory: <code>app/code/</code></li>
+                    <li>Run the following Magento commands:
+                        <ol>
+                            <li><code>php bin/magento module:enable Mageserv_UPayments</code></li>
+                            <li><code>php bin/magento setup:upgrade</code></li>
+                            <li><code>php bin/magento setup:static-content:deploy</code></li>
+                            <li><code>php bin/magento cache:clean</code></li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step animated fadeIn">
+                <h2>Log Access</h2>
+                <h3>UPayments log</h3>
+                <p>Access log from file found at: <code>/var/log/debug_upayments.log</code></p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="step animated fadeIn">
+                <h2>Activating the Plugin</h2>
+                <p>By default and after installing the module, it will be activated. To Disable/Enable the module:</p>
+
+                <h3>Enable</h3>
+                <p><code>php bin/magento module:enable Mageserv_UPayments</code></p>
+
+                <h3>Disable</h3>
+                <p><code>php bin/magento module:disable Mageserv_UPayments</code></p>
+
+                <h2>Configure the Plugin</h2>
+
+                <ol>
+                    <li>Navigate to "Magento admin panel" &gt;&gt; Stores &gt;&gt; Configuration</li>
+                    <li>Open "Sales &gt;&gt; Payment Methods"</li>
+                    <li>Select the preferred payment method from the available list of UPayments payment methods</li>
+                    <li>Enable the Payment Gateway</li>
+                    <li>Enter the primary credentials:
+                        <ul>
+                            <li><strong>Enable Live Mode:</strong> Set to <b>Yes</b> after finish preprod testing</li>
+                            <li><strong>Token:</strong> Enter your payment token</li>
+                            <li><strong>Enable Tokenization:</strong> If set to "Yes", it will retrieve tokenized cards from the gateway for faster checkout</li>
+                            <li><strong>Enable Debugging:</strong> If set to "Yes", it will log all Upayments requests and save it to the log file. Please disable it after finishing your debug to save your disk space</li>
+                        </ul>
+                    </li>
+                    <li>Click Save Config</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Extension Created by Mageserv LTD. | Contact us at <a href="mailto:mageserv.ltd@gmail.com">mageserv.ltd@gmail.com</a></p>
+        <p>Page content generated by ChatGPT.</p>
+    </div>
+
+</div>
+
+</body>
+
+</html>

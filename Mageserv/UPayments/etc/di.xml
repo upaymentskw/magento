@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * di
+ *
+ * @copyright Copyright © 2023 Mageserv LTD. All rights reserved.
+ * @author    mageserv.ltd@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- All (non whitelabled) Method -->
+    <virtualType name="UPaymentsAllFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_ALL</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsAllValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- Credit Card Method -->
+    <virtualType name="UPaymentsFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- Credit Card Method -->
+   <!-- <virtualType name="UPaymentsCCFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_WHITELIST</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\CC</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCCCommandPool</argument>
+        </arguments>
+    </virtualType>-->
+    <!-- KNet Method -->
+    <virtualType name="UPaymentsKnetFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_KNET</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsKnetValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- SamsungPay Method -->
+    <virtualType name="UPaymentsSamsungPayFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_SAMSUNGPAY</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsSamsungPayValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- Apple Pay Method -->
+    <virtualType name="UPaymentsApplePayFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_APPLEPAY</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsApplePayValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- Google Pay Method -->
+    <virtualType name="UPaymentsGooglePayFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_GOOGLEPAY</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsGooglePayValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- American Express Method -->
+    <virtualType name="UPaymentsAmexFacade" type="Mageserv\UPayments\Model\UPayments">
+        <arguments>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_AMEX</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Mageserv\UPayments\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsAmexValueHandlerPool</argument>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- Vault Method -->
+    <virtualType name="UPaymentsVaultFacade" type="Mageserv\UPayments\Model\UPaymentsVault">
+        <arguments>
+            <argument name="config" xsi:type="object">UPaymentsVaultConfig</argument>
+            <argument name="code" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_VAULT_UPAYMENTS</argument>
+            <argument name="valueHandlerPool" xsi:type="object">UPaymentsVaultValueHandlerPool</argument>
+            <argument name="vaultProvider" xsi:type="object">UPaymentsFacade</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Commands infrastructure -->
+    <virtualType name="UPaymentsCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+               <item name="authorize" xsi:type="string">UPaymentsAuthorizeCommand</item>
+                <item name="refund" xsi:type="string">UPaymentsRefundCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+   <!-- <virtualType name="UPaymentsCCCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+               <item name="authorize" xsi:type="string">UPaymentsCaptureCommand</item>
+               <item name="sale" xsi:type="string">UPaymentsCaptureCommand</item>
+                <item name="refund" xsi:type="string">UPaymentsRefundCommand</item>
+                <item name="vault_authorize" xsi:type="string">UPaymentsCaptureCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>-->
+
+    <!-- Authorize command -->
+
+    <virtualType name="UPaymentsAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">UPaymentsAuthorizationRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Mageserv\UPayments\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Mageserv\UPayments\Gateway\Http\Client\Client</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="UPaymentsCaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Mageserv\UPayments\Gateway\Request\CaptureRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Mageserv\UPayments\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Mageserv\UPayments\Gateway\Http\Client\Client</argument>
+            <argument name="validator" xsi:type="object">Mageserv\UPayments\Gateway\Validator\PaymentValidator</argument>
+            <argument name="handler" xsi:type="object">Mageserv\UPayments\Gateway\Response\TxnIdHandler</argument>
+        </arguments>
+    </virtualType>
+    <!-- Refund Command -->
+    <virtualType name="UPaymentsRefundCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">Mageserv\UPayments\Gateway\Request\RefundRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Mageserv\UPayments\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Mageserv\UPayments\Gateway\Http\Client\Client</argument>
+            <argument name="validator" xsi:type="object">Mageserv\UPayments\Gateway\Validator\FollowupValidator</argument>
+        </arguments>
+    </virtualType>
+    <type name="Mageserv\UPayments\Gateway\Request\RefundRequest">
+        <arguments>
+            <argument name="config" xsi:type="object">UPaymentsConfig</argument>
+        </arguments>
+    </type>
+
+    <!-- Request Builders -->
+    <virtualType name="UPaymentsChargeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="product" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Product</item>
+                <item name="order" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Order</item>
+                <item name="paymentGateway" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\PaymentGateway</item>
+                <item name="customer" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Customer</item>
+                <item name="tokens" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Tokens</item>
+                <item name="plugin" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Plugin</item>
+                <item name="extras" xsi:type="string">Mageserv\UPayments\Gateway\Request\Builder\Extras</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsAuthorizationRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="transaction" xsi:type="string">AuthorizationRequest</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Requests -->
+    <type name="Mageserv\UPayments\Gateway\Request\CaptureRequest">
+        <arguments>
+            <argument name="config" xsi:type="object">UPaymentsConfig</argument>
+        </arguments>
+    </type>
+    <!-- Authorize Request -->
+    <virtualType name="AuthorizationRequest" type="Mageserv\UPayments\Gateway\Request\AuthorizationRequest">
+        <arguments>
+            <argument name="config" xsi:type="object">UPaymentsConfig</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Value handlers infrastructure -->
+    <virtualType name="UPaymentsAllValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsAllConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+   <!-- <virtualType name="UPaymentsCCValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsCCConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>-->
+    <virtualType name="UPaymentsKnetValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsKnetConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsSamsungPayValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsSamsungPayConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsApplePayValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsApplePayConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsGooglePayValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsGooglePayConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsAmexValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsAmexConfigValueHandlerAll</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsVaultValueHandlerPool" type="VaultPaymentValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">UPaymentsConfigValueHandlerVault</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Config Handlers -->
+    <virtualType name="UPaymentsAllConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsAllConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsConfig</argument>
+        </arguments>
+    </virtualType>
+   <!-- <virtualType name="UPaymentsCCConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsCCConfig</argument>
+        </arguments>
+    </virtualType>-->
+    <virtualType name="UPaymentsSamsungPayConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsSamsungPayConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsKnetConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsKnetConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsApplePayConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsApplePayConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsGooglePayConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsGooglePayConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsAmexConfigValueHandlerAll" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsAmexConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsConfigValueHandlerVault" type="VaultPaymentDefaultValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">UPaymentsVaultConfig</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Configs -->
+    <virtualType name="UPaymentsAllConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_ALL</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS</argument>
+        </arguments>
+    </virtualType>
+   <!-- <virtualType name="UPaymentsCCConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_WHITELIST</argument>
+        </arguments>
+    </virtualType>-->
+    <virtualType name="UPaymentsSamsungPayConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_SAMSUNGPAY</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsKnetConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_KNET</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsApplePayConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_APPLEPAY</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsGooglePayConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_GOOGLEPAY</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsAmexConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_UPAYMENTS_AMEX</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UPaymentsVaultConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Mageserv\UPayments\Model\Ui\ConfigProvider::CODE_VAULT_UPAYMENTS</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="UPaymentsCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">UPaymentsCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Payment\Gateway\Command\CommandManagerPool">
+        <arguments>
+            <argument name="executors" xsi:type="array">
+                <item name="upayments_creditcard" xsi:type="string">UPaymentsCommandManager</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Mageserv\UPayments\Gateway\Http\Client\Api">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">UPaymentsChargeRequest</argument>
+        </arguments>
+    </type>
+    <type name="Mageserv\UPayments\Gateway\Request\CaptureRequest">
+        <arguments>
+            <argument name="chargeRequestBuilder" xsi:type="object">UPaymentsChargeRequest</argument>
+        </arguments>
+    </type>
+    <!-- refill configs -->
+    <type name="Magento\Payment\Model\Method\Adapter">
+        <plugin name="refill_upayments_config"
+                type="Mageserv\UPayments\Plugin\Method\Adapter"
+                disabled="false"
+                />
+    </type>
+
+
+    <type name="Magento\Vault\Model\PaymentTokenRepository">
+        <plugin name="delete_gateway_token"
+                type="Mageserv\UPayments\Plugin\Vault\PaymentTokenRepository"
+                disabled="false"
+                />
+    </type>
+</config>

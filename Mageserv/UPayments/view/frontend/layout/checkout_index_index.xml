@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="renders" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="upayments-all" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/all
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_all" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="upayments-creditcard" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/creditcard
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_creditcard" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <!--<item name="upayments-cc" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/cc
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_cc" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>-->
+                                                                <item name="upayments-knet" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/knet
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_knet" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+
+                                                                <item name="upayments-amex" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/amex
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_amex" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="upayments-samsungpay" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/samsungpay
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_samsungpay" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="upayments-applepay" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/applepay
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_applepay" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="upayments-googlepay" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Mageserv_UPayments/js/view/payment/googlepay
+                                                                    </item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="upayments_googlepay" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired"
+                                                                                  xsi:type="boolean">true
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

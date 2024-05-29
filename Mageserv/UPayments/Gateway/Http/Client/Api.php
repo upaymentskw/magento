@@ -22,7 +22,7 @@ use Psr\Log\LoggerInterface;
 use \StdClass;
 class Api
 {
-    const API_STATING_URL = "https://preprod-uinterface.upayments.com/api/v1/";
+    const API_STATING_URL = "https://sandboxapi.upayments.com/api/v1/";
     const API_LIVE_URL = "https://apiv2api.upayments.com/api/v1/";
     const CHARGE_ENDPOINT = "charge";
     const CREATE_CARD_TOKEN = "create-token-from-card";

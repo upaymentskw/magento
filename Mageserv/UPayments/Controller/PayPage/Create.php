@@ -87,6 +87,7 @@ class Create extends Action
         }
 
         // Create PayPage
+        /** @var \Magento\Sales\Model\Order $order */
         $order = $this->getOrder();
         if (!$order) {
             $this->_logger->critical("UPayments::Order is missing!, Quote [{$quoteId}]");
@@ -99,6 +100,7 @@ class Create extends Action
         }
         $order->setStatus("pending_payment");
         $order->setState("pending_payment");
+        $order->setCanSendNewEmailFlag(false);
         $order->save();
 
         try{
